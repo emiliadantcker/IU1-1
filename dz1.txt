@@ -1,0 +1,37 @@
+print("Введите длину 1-ой стороны")
+a=int(input())
+print("Введите длину 2-ой стороны")
+b=int(input())
+print("Введите длину 3-ей стороны")
+c=int(input())
+if a<=0 or b<=0 or c<=0:
+	print("Вы ввели некорректные длины сторон, они не могут быть отрицательными. Введите снова")
+else:
+	maximum=max(a,b,c)
+	minimum=min(a,b,c)
+	sr=0
+	p=[a,b,c]
+	i=0
+	for k in range(3):
+		if p[i+1]>=p[i]>=p[i+2] or p[i+2]>=p[i]>=p[i+2]:
+			sr=p[i]
+			break
+		else:
+			p[i]=p[i+1]
+			p[i+1]=p[i+2]
+			p[i+2]=p[i]
+	if a+b>c and a+c>b and b+c>a:
+		if a==b!=с or a!=b==c or a==c!=b:
+			print('Треугольник равнобедренный и', end='')
+		elif a==b==c:
+			print('Треугольник равноcторонний и', end='')
+		elif a!=b!=c:
+			print('Треугольник не имеет равных сторон и', end='')
+		if maxim**2>sr**2+minim**2:
+			print('Треугольник тупоугольный')
+		elif maxim**2==sr**2+minim**2:
+			print('Треугольник прямоугольный')
+		elif maxim**2<sr**2+minim**2:
+			print('Треугольник остроугольный')
+	else:
+		print("Треугольника с такими сторонами не существует")
